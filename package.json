@@ -1,0 +1,22 @@
+{
+  "name": "cbd",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "nodemon ./src/start",
+    "scss": "node-sass --watch ./src/public/scss/ -o ./src/public/dist/"
+  },
+  "author": "razzil1",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.2",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "pug": "^2.0.4"
+  }
+}
