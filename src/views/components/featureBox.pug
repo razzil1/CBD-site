@@ -1,0 +1,5 @@
+mixin featureBox(feature = {})
+  .feature-box
+    img.feature-box__image(src=`/images/${feature.image}`)
+    h3.heading-tertiary.u-margin-bottom-small #{feature.title}
+    p.feature-box__text #{feature.description}

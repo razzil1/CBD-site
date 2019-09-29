@@ -1,4 +1,29 @@
 extends layout
 
+include components/featureBox
+
+
 block content
-  p videcemo
+  header.header
+    .header__logo-box
+      img.header__logo(src="images/logo.png" alt="Logo")
+
+    .header__text-box
+      h1.heading-primary
+        span.heading-primary--main CBD
+        span.heading-primary--sub najbolje od konoplje
+
+
+  section.section-features
+    .row
+      .col-1-of-4
+        +featureBox({title: "Bez dodataka hemikalija", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur.", image: "feature-1.png"})
+
+      .col-1-of-4
+        +featureBox({title: "Testirano u laboratoriji", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur.", image: "feature-2.png"})
+
+      .col-1-of-4
+        +featureBox({title: "Ekstrakcija pomocu CO2", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur.", image: "feature-3.png"})
+
+      .col-1-of-4
+        +featureBox({title: "Spektar Kanabinoida", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur.", image: "feature-4.png"})
