@@ -58,20 +58,16 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-color: #fff;
   -webkit-background-clip: text;
   color: transparent;
-  letter-spacing: .2rem;
-  transition: all .2s; }
+  letter-spacing: .2rem; }
   @media only screen and (max-width: 56.25em) {
     .heading-secondary {
       font-size: 3rem; } }
   @media only screen and (max-width: 37.5em) {
     .heading-secondary {
       font-size: 2.5rem; } }
-  .heading-secondary:hover {
-    transform: skewY(2deg) skewX(15deg) scale(1.1);
-    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .heading-tertiary {
   font-size: 1.6rem;
@@ -216,6 +212,18 @@ body {
     .section-features {
       padding: 20rem 0; } }
 
+.section-test {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8));
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -10rem; }
+  .section-test > * {
+    transform: skewY(7deg); }
+  @media only screen and (max-width: 56.25em) {
+    .section-test {
+      padding: 10rem 0; } }
+
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
@@ -232,75 +240,43 @@ body {
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
 
+.product-item {
+  background: #fff;
+  width: 100%;
+  max-width: 400px;
+  padding: 100px 60px 30px;
+  border-radius: 30px;
+  margin: 100px auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  z-index: 0;
+  position: relative; }
 
-    /* TODO delete from this */
-    .card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-      cursor: pointer;
-      height: 300px;
-      /* padding: 0 20px; */
-      position: relative;
-      -webkit-tap-highlight-color: rgba(0,0,0,0.025);
-      text-align: center;
-      transition: height 1000ms;
-      /* width: 260px; */
-    }
-    @media (max-width: 767px) {
-      .card {
-        left: calc(50% - 20px);
-        transform: translateX(-50%);
-      }
-    }
-    .card.expanded {
-      height: 400px;
-    }
-    .label {
-      width: 150px;
-      height: 150px;
-      margin-top: 30px;
-      transform: translateY(10px);
-      transition: transform 1000ms;
-    }
-    .card.expanded .label {
-      transform: translateY(0);
-    }
+.product-item:before {
+  content: "";
+  border-radius: 30px 30px 0 0;
+  background: #28b485;
+  height: 50%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0; }
 
-    .text {
-      clip-path: polygon(0% 100%,0% -80%,15% -70%,17.23% -53.59%,23% -40%,27.23% -28.94%,35% -20%,41.09% -13.59%,50% -10%,58.91% -13.23%,65% -20%,72.77% -28.23%,77% -40%,82.77% -54.65%,85% -70%,100% -80%,100% 100%);
-      -webkit-clip-path: polygon(0% 100%,0% -80%,15% -70%,17.23% -53.59%,23% -40%,27.23% -28.94%,35% -20%,41.09% -13.59%,50% -10%,58.91% -13.23%,65% -20%,72.77% -28.23%,77% -40%,82.77% -54.65%,85% -70%,100% -80%,100% 100%);
-      transition: clip-path 1000ms;
-    }
-    .card.expanded .text {
-      clip-path: polygon(0% 100%,0% -90%,15% -80%,17.23% -63.59%,23% -50%,27.23% -38.94%,35% -30%,41.09% -23.59%,50% -20%,58.91% -23.23%,65% -30%,72.77% -38.23%,77% -50%,82.77% -64.65%,85% -80%,100% -90%,100% 100%);
-      -webkit-clip-path: polygon(0% 100%,0% -90%,15% -80%,17.23% -63.59%,23% -50%,27.23% -38.94%,35% -30%,41.09% -23.59%,50% -20%,58.91% -23.23%,65% -30%,72.77% -38.23%,77% -50%,82.77% -64.65%,85% -80%,100% -90%,100% 100%);
-    }
-    .text-content {
-      transform: translateY(-160px);
-      transition: transform 1000ms;
-    }
-    .card.expanded .text-content {
-      transform: translateY(-15px);
-    }
-    .chevron {
-      position: absolute;
-      bottom: 20px;
-      left: calc(50% - 15px);
-      transform-origin: 50%;
-      transform: rotate(180deg);
-      transition: transform 1000ms;
-    }
-    .card.expanded .chevron {
-      transform: rotate(0deg);
-    }
-    .title {
-      font-family: 'Alegreya Sans', sans-serif;
-      font-weight: 900;
-      margin: 20px 0 12px;
-    }
-    .body-text {
-      padding: 0 20px;
-    }
+.product-item__image {
+  width: 100%; }
 
-    /* TODO to here */
+.product-item__content {
+  text-align: center; }
+
+.product-item__name {
+  margin-bottom: 10px; }
+
+.product-item__description {
+  margin-bottom: 60px;
+  line-height: 2;
+  font-style: italic; }
+
+.product-item__price {
+  font-size: 2em;
+  font-family: "lato";
+  font-weight: bold; }

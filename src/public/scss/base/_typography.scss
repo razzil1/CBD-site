@@ -51,11 +51,10 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    background-color: $color-white;
     -webkit-background-clip: text;
     color: transparent;
     letter-spacing: .2rem;
-    transition: all .2s;
 
     @include respond(tab-port) {
         font-size: 3rem;
@@ -63,11 +62,6 @@ body {
 
     @include respond(phone) {
         font-size: 2.5rem;
-    }
-
-    &:hover {
-        transform: skewY(2deg) skewX(15deg) scale(1.1);
-        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
     }
 }
 
