@@ -1,0 +1,7 @@
+mixin productBox(product = {})
+  .product-item
+    img.product-item__image(src=`/images/${product.image}`)
+    .product-item__content
+      h3.heading-tertiary.u-margin-bottom-small #{product.title}
+      p.product-item__description #{product.description}
+      .price #{product.price}

@@ -1,7 +1,7 @@
 extends layout
 
 include components/featureBox
-
+include components/productBox
 
 block content
   header.header
@@ -10,49 +10,60 @@ block content
 
     .header__text-box
       h1.heading-primary
-        span.heading-primary--main CBD
-        span.heading-primary--sub najbolje od konoplje
+        span.heading-primary--main= lang["main-title"]
+        span.heading-primary--sub= lang["main-subtitle"]
 
+  section.section-about
+    .about
+      p.about__text= lang["about-text"]
 
   section.section-features
     .row
       .col-1-of-4
-        +featureBox({title: "Bez dodataka hemikalija", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur.", image: "feature-1.png"})
+        +featureBox({title: lang["feature-1"]["title"], description: lang["feature-1"]["description"], image: "feature-1.png"})
 
       .col-1-of-4
-        +featureBox({title: "Testirano u laboratoriji", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur.", image: "feature-2.png"})
+        +featureBox({title: lang["feature-2"]["title"], description: lang["feature-2"]["description"], image: "feature-2.png"})
 
       .col-1-of-4
-        +featureBox({title: "Ekstrakcija pomocu CO2", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur.", image: "feature-3.png"})
+        +featureBox({title: lang["feature-3"]["title"], description: lang["feature-3"]["description"], image: "feature-3.png"})
 
       .col-1-of-4
-        +featureBox({title: "Spektar Kanabinoida", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur.", image: "feature-4.png"})
+        +featureBox({title: lang["feature-4"]["title"], description: lang["feature-4"]["description"], image: "feature-4.png"})
 
-  section.section-test
+  section.section-products
     .u-center-text.u-margin-bottom-big
-      h2.heading-secondary Nasi Proizvodi
+      h2.heading-secondary= lang["products-title"]
 
     .row
       .col-1-of-3
-        .product-item
-          img.product-item__image(src="https://suprahemp.rs/wp-content/uploads/2018/11/cbd_ulja_naslo_conpng.png")
-          .product-item__content
-            h3.heading-tertiary.u-margin-bottom-small CBD ULJE 3% – 10ML
-            p.product-item__description Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi aspernatur voluptatem consectetur!
-            .price $44.00
+        +productBox({title: lang["product-1"]["title"], description: lang["product-1"]["description"], price: lang["product-1"]["price"], image: "product.png"})
 
       .col-1-of-3
-        .product-item
-          img.product-item__image(src="https://suprahemp.rs/wp-content/uploads/2018/11/cbd_ulja_naslo_conpng.png")
-          .product-item__content
-            h3.heading-tertiary.u-margin-bottom-small CBD ULJE 3% – 10ML
-            p.product-item__description Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi aspernatur voluptatem consectetur!
-            .price $44.00
+        +productBox({title: lang["product-2"]["title"], description: lang["product-2"]["description"], price: lang["product-2"]["price"], image: "product.png"})
 
       .col-1-of-3
-        .product-item
-          img.product-item__image(src="https://suprahemp.rs/wp-content/uploads/2018/11/cbd_ulja_naslo_conpng.png")
-          .product-item__content
-            h3.heading-tertiary.u-margin-bottom-small CBD ULJE 3% – 10ML
-            p.product-item__description Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi aspernatur voluptatem consectetur!
-            .price $44.00
+        +productBox({title: lang["product-3"]["title"], description: lang["product-3"]["description"], price: lang["product-3"]["price"], image: "product.png"})
+
+
+  section.section-contact
+    .row
+      .contact
+        .contact__form
+          form.form(action="/message" method="POST")
+            .u-margin-bottom-medium
+              h2.heading-secondary= lang["contact"]["title"]
+            .form__group
+              label.form__label(for="name")= lang["contact"]["first-last-name"]
+              input.form__input(name="name" type="text" placeholder= lang["contact"]["first-last-name"] id="name" required)
+            .form__group
+              label.form__label(for="email")= lang["contact"]["email"]
+              input.form__input(name="email" type="email" placeholder= lang["contact"]["email"] id="email" required)
+            .form__group
+              label.form__label(for="phone")= lang["contact"]["phone"]
+              input.form__input(name="phone" type="text" placeholder= lang["contact"]["phone"] id="phone" required)
+            .form__group
+              label.form__label(for="message")= lang["contact"]["message"]
+              textarea.form__input(name="message" rows="5" id="message" placeholder= lang["contact"]["message"])
+            .form__group
+              button.btn.btn--green= lang["contact"]["submit-button"]
