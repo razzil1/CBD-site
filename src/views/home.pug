@@ -13,7 +13,7 @@ block content
         span.heading-primary--main= lang["main-title"]
         span.heading-primary--sub= lang["main-subtitle"]
 
-  section.section-about
+  section.section-about#test
     .about
       p.about__text= lang["about-text"]
 
@@ -67,3 +67,12 @@ block content
               textarea.form__input(name="message" rows="5" id="message" placeholder= lang["contact"]["message"])
             .form__group
               button.btn.btn--green= lang["contact"]["submit-button"]
+
+  footer.footer
+    p.footer__copyright
+      | Built by 
+      a.footer__link(href='https://github.com/razzil1' target="_blank") Dusan Pilipovic
+      | .
+      | Copyright &copy; by Dusan Pilipovic. Designed by 
+      a.footer__link(href='https://github.com/jonasschmedtmann') Jonas Schmedtmann
+      | .

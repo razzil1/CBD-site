@@ -5,8 +5,76 @@ html
     link(rel='stylesheet', href='/dist/main.css')
     link(rel="shortcut icon" type="image/png" href="/images/favicon-16x16.png")
     meta(name="viewport" content="width=device-width, initial-scale=1")
+    script(src='http://code.jquery.com/jquery.min.js')
+    script.
+      // Sticky Header
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > 100) {
+          $('.main_h').addClass('sticky');
+        } else {
+          $('.main_h').removeClass('sticky');
+        }
+      });
+
+      // Mobile Navigation
+      $('.mobile-toggle').click(function() {
+        if ($('.main_h').hasClass('open-nav')) {
+          $('.main_h').removeClass('open-nav');
+        } else {
+          $('.main_h').addClass('open-nav');
+        }
+      });
+
+      $('.main_h li a').click(function() {
+        if ($('.main_h').hasClass('open-nav')) {
+          $('.navigation').removeClass('open-nav');
+          $('.main_h').removeClass('open-nav');
+        }
+      });
+
+      // Navigation Scroll
+      $('nav a').click(function(event) {
+        var id = $(this).attr("href");
+        var offset = 70;
+        var target = $(id).offset().top - offset;
+        $('html, body').animate({
+          scrollTop: target
+        }, 500);
+        event.preventDefault();
+      });
+
+
   body
-    //- block header
+    
+    block header
+      .main_h
+        .row
+          a.logo(href='#')
+            img.logo__img(src="images/logo.png", alt="logo")
+          
+          .mobile-toggle
+            span
+            span
+            span
+          
+          nav
+            ul
+              li
+                a(href='#test') Section 01
+              li
+                a(href='.sec02') Section 02
+              li
+                a(href='.sec03') Section 03
+              li
+                a(href='/sr')
+                  img(src="images/serbia-flag-icon-32.png", alt="serbian-flag")
+              li
+                a(href='/en')
+                  img(src="images/united-kingdom-flag-icon-32.png", alt="united-kingdom-flag")
+              li
+                a(href='/de')
+                  img(src="images/germany-flag-icon-32.png", alt="germany-flag")
+
 
     .content
       block content
